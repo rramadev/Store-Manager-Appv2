@@ -22,17 +22,15 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-prebuild": "npm install -g http-server @angular/cli",
+    "heroku-prebuild": "npm install -g http-server @angular/cli@latest @angular/compiler-cli@latest",
     "heroku-postbuild": "ng build --prod",
     "start": "http-server dist/"
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "1.1.3",
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
-    "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
