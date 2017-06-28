@@ -16,15 +16,15 @@
   "engines": {
     "node": "6.11.0"
   },
-  "scripts": {
-    "heroku-prebuild": "npm install -g http-server",
-    "heroku-postbuild": "ng build --prod",
-    "start": "http-server dist/",
+  "scripts": {    
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-prebuild": "npm install -g http-server",
+    "heroku-postbuild": "ng build --prod",
+    "start": "http-server dist/",
   },
   "private": true,
   "dependencies": {
