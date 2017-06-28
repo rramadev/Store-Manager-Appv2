@@ -1,0 +1,9 @@
+table {
+  margin: 20px;
+}
+thead {
+    color: #337AB7;
+}
+td {
+  vertical-align: middle;
+}

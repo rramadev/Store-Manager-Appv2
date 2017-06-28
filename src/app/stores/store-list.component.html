@@ -1,0 +1,100 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    {{pageTitle}} <span *ngIf="storeFilterInput.length"> {{displayFilter()}}</span>
+    <md-progress-bar *ngIf="showBar" color="accent" mode="indeterminate"></md-progress-bar>
+    <span *ngIf="updated" class="updated">
+       {{updateMessage}}
+      <span class="glyphicon glyphicon-ok-circle"></span>
+    </span>
+    <span *ngIf="deleted" class="deleted">
+       {{deleteMessage}}
+      <span class="glyphicon glyphicon-remove-circle"></span>
+    </span>
+  </div>
+  <div class="panel-body">
+    <md-card>
+      <div class="row">
+        <div class="form-group col-md-3">
+          <md-input-container>
+            <input mdInput placeholder="City" [mdAutocomplete]="auto" [formControl]="cityCtrl" #cityFilter (keyup)="setFilterValue(cityFilter.value, 'city')" />
+          </md-input-container>
+          <md-autocomplete #auto="mdAutocomplete">
+            <md-option *ngFor="let city of filteredCities | async" [value]="city" (click)="setFilterValue(city, 'city')">
+              {{ city }}
+            </md-option>
+          </md-autocomplete>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="sel1">Search:</label>
+          <input id="sel1" type="text" class="form-control"  [placeholder]="placeholderFilter" [(ngModel)]="cityFilterInput" #searchFilter (keyup)="setFilterValue(searchFilter.value, 'search')" />
+        </div>
+        <div class="form-group col-md-5">
+          <label for="sel3">Order By:</label>
+          <select id="sel3" class="form-control" [(ngModel)]="orderByFilter">
+            <option value="name" selected>Store Name</option>
+            <option value="address">Store Address</option>
+          </select>
+        </div>
+      </div>
+    </md-card>
+    <div class="table-responsive">
+      <table class="table" *ngIf="stores && stores.length">
+        <thead>
+          <tr>
+            <th>
+              <button class="btn btn-primary btn-sm" (click)="toggleImage()">
+                {{showImage ? "Hide" : "Show"}} Image
+              </button>
+            </th>
+            <th>Index</th>
+            <th>Store</th>
+            <th>Address</th>
+            <th>
+              <md-slide-toggle class="md-slide-toggle-store" [(ngModel)]="showTools">
+              </md-slide-toggle>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let store of stores  |
+                storeFieldFilter:storeNoDuplicateFilter | storeFilter:storeFilterInput:storeFilterFields | orderBy:orderByFilter;
+                let i = index">
+            <td>
+              <img *ngIf="showImage" [src]="store.imageUrl" [title]="store.name" [style.width.px]="imageWidth" [style.margin.px]="imageMargin">
+            </td>
+            <td>{{ i+1 }}</td>
+            <td>{{ store.name }}</td>
+            <td>{{ store.address }}</td>
+            <td>
+              <div *ngIf="showTools">
+                <div class="showTools">
+                <a href="#" class="btn btn-info btn-sm" (click)="$event.preventDefault(); openDialog(store.address, store.name)">
+                  <span class="glyphicon glyphicon-map-marker"></span> Map
+                </a>
+                </div>
+                <div class="showTools">
+                <button md-icon-button [mdMenuTriggerFor]="menu">
+                  <md-icon>more_vert</md-icon>
+                </button>
+                <md-menu #menu="mdMenu">
+                  <button md-menu-item disabled>
+                    <md-icon>border_color</md-icon>
+                    <span>Edit</span>
+                  </button>
+                  <button md-menu-item (click)="deleteStore(store.id)">
+                    <md-icon>delete</md-icon>
+                    <span>Delete</span>
+                  </button>
+                  <button md-menu-item disabled>
+                    <md-icon>build</md-icon>
+                    <span>Config</span>
+                  </button>
+                </md-menu>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

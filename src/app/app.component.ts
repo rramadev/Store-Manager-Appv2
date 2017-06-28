@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
+import { MdSnackBar } from '@angular/material';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-sma',
+	moduleId: module.id,
+	templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'app';
+	pageTitle: string = 'Store Manager';
+	snackBarMsg: string = 'Store Manager App v1.0.0 | rramadev.github.io';
+
+	constructor(public snackBar: MdSnackBar) { }
+
+	openSnackBar() {
+		this.snackBar.open(this.snackBarMsg, '| Close', {
+			duration: 3000,
+		});
+	}
 }
