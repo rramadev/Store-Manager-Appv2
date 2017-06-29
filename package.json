@@ -22,8 +22,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-prebuild": "npm install -g http-server @angular/cli@latest @angular/compiler-cli@latest",
-    "heroku-postbuild": "ng build --prod",
+    "prestart": "npm install -g http-server @angular/cli@latest @angular/compiler-cli@latest",
     "start": "http-server dist/"
   },
   "private": true,
