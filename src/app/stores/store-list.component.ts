@@ -13,24 +13,24 @@ import { StoreListMapDialogComponent } from './store-list-map-dialog.component';
 	styleUrls: ['./store-list.component.css']
 })
 export class StoreListComponent implements OnInit {
-	pageTitle: string = 'Store List';
-	imageWidth: number = 60;
-	imageMargin: number = 2;
-	showImage: boolean = true;
-	showTools: boolean = true;
-	showBar: boolean = false;
-	updated: boolean = false;
-	updateMessage: string = ' - Store Updated!';
-	deleted: boolean = false;
-	deleteMessage: string = ' - Store Deleted!';
+	pageTitle = 'Store List';
+	imageWidth  = 60;
+	imageMargin  = 2;
+	showImage = true;
+	showTools = true;
+	showBar = false;
+	updated = false;
+	updateMessage = ' - Store Updated!';
+	deleted = false;
+	deleteMessage = ' - Store Deleted!';
 	storeFilterFields: string[];
-	storeNoDuplicateFilter: string = 'address';
-	placeholderFilter: string = 'Looking for...';
-	errorMessage: string = '';
-	storeFilterInput: string = '';
-	storeFilterMsg: string = '';
-	orderByFilter: string = 'name';
-	cityFilterInput: string = '';
+	storeNoDuplicateFilter = 'address';
+	placeholderFilter = 'Looking for...';
+	errorMessage = '';
+	storeFilterInput = '';
+	storeFilterMsg = '';
+	orderByFilter = 'name';
+	cityFilterInput = '';
 
 	cityCtrl: FormControl;
   filteredCities: any;
@@ -81,7 +81,7 @@ export class StoreListComponent implements OnInit {
 		);
 	}
 
-	displayFilter(): string {
+	displayFilter() {
 		return this.storeFilterMsg + this.storeFilterInput;
 	}
 
@@ -118,8 +118,8 @@ export class StoreListComponent implements OnInit {
         // };
 				// Remove duplicated addresses
 				// Using filter method
-				let addressList: string[] = [];
-				let noDuplicateStores = this.stores.filter(store => {
+				const addressList: string[] = [];
+				const noDuplicateStores = this.stores.filter(store => {
 					return (addressList.indexOf(store['address']) === -1) ?
 						addressList.push(store['address'])
 						: false;
@@ -152,7 +152,7 @@ export class StoreListComponent implements OnInit {
 		);
 	}
 
-	deleteStore(id: number) {
+	deleteStore(id ) {
 		this.showBar = true;
 		this.deleted = false;
 		this.storeService.deleteStore(id).subscribe(
@@ -168,7 +168,7 @@ export class StoreListComponent implements OnInit {
 	}
 
 	openDialog(address: string, name: string): void {
-    let dialogRef = this.dialog.open(StoreListMapDialogComponent);
+    const dialogRef = this.dialog.open(StoreListMapDialogComponent);
 		dialogRef.componentInstance.address = address;
 		dialogRef.componentInstance.name = name;
   }

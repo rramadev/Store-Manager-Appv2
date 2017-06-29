@@ -30,8 +30,8 @@
         *ngFor="let product of products |
           productFilter:listFilter;
           let i = index"
-        [colspan]="1"
-        [rowspan]="1">
+        colspan="1"
+        rowspan="1">
 
         <md-card mdCardBorder class="md-card-product" [routerLink]="['/products', product.id]">
           <img md-card-image id="product{{i}}" [src]="product.imageUrl" [title]="product.productName">
