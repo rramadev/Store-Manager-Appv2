@@ -21,9 +21,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "heroku-prebuild": "npm install -g http-server @angular/cli@latest @angular/compiler-cli@latest",
-    "start": "http-server dist/"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
