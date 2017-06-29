@@ -1,4 +1,4 @@
-# Store Manager App v2 - Angular 4.x Demo 
+# Store Manager App v2.0.0 - Angular 4.x Demo 
 
 ## Synopsis
 
@@ -13,7 +13,7 @@ A complete Angular4 demo app using:
     * Angular-cli
     * Angular Material 2
     * Angular in-memory-web-api
-    * ng2-ui
+    * ng2-ui/map
 - Reactive-Extensions RxJS
 - Webpack
 - NPM Build
@@ -22,17 +22,15 @@ This is a sample application of the Angular 4.0 framework, using some of the lat
 
 The app consists on two main different modules, which provide the possibility of managing the Stores and Product lists and details.
 
-*You can see a running demo* [here](https://...).
+*You can see a running demo* [here](https://sma2-rramadev.herokuapp.com).
 
 ## Commands
 
 command | description
 --- | ---
-`npm run start`| build typescript, build sass, start concurrently watch typescript and lite-server
-`npm run server`| start lite-server
-`npm run build:tsc`| typescript build
-`npm run build:tsc:w`| typescript build and watch for changes
-`npm run build:sass`| build sass
+`ng serve --open`| build app, open navigator on http://localhost:4200/. The app will automatically reload if any of the source files change.
+`ng build`| build app to the dist/ directory.
+`ng build --prod`| build app for production to the dist/ directory.
 
 ## Installation
 
@@ -41,5 +39,5 @@ command | description
 2) Type: `npm install`
     This installs the dependencies as defined in the package.json file.
 
-3) Type: `npm start`
-    This launches the builder to transpile the typescript files to js and to compile the sass files to css and wait for ts changes. It also starts the lite-server and launches the browser to run the application.
+3) Type: `ng serve --open`
+    This launches the builder to compile the files to the dist/ directory and wait for changes. It also starts the http-server and launches the browser to run the application on http://localhost:4200/.
