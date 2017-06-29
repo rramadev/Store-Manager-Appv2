@@ -1,28 +1,45 @@
-# Sma2
+# Store Manager App v2 - Angular 4.x Demo 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
+## Synopsis
 
-## Development server
+A complete Angular4 demo app using:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Html5
+- CSS3
+- SASS
+- Bootstrap
+- TypeScript
+- Angular 4.0
+    * Angular-cli
+    * Angular Material 2
+    * Angular in-memory-web-api
+    * ng2-ui
+- Reactive-Extensions RxJS
+- Webpack
+- NPM Build
 
-## Code scaffolding
+This is a sample application of the Angular 4.0 framework, using some of the latest web front-end development technologies.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+The app consists on two main different modules, which provide the possibility of managing the Stores and Product lists and details.
 
-## Build
+*You can see a running demo* [here](https://...).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Commands
 
-## Running unit tests
+command | description
+--- | ---
+`npm run start`| build typescript, build sass, start concurrently watch typescript and lite-server
+`npm run server`| start lite-server
+`npm run build:tsc`| typescript build
+`npm run build:tsc:w`| typescript build and watch for changes
+`npm run build:sass`| build sass
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+1) Open a command prompt in the project's root directory
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+2) Type: `npm install`
+    This installs the dependencies as defined in the package.json file.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+3) Type: `npm start`
+    This launches the builder to transpile the typescript files to js and to compile the sass files to css and wait for ts changes. It also starts the lite-server and launches the browser to run the application.

@@ -12,7 +12,7 @@ export class StoreListMapDialogComponent {
   constructor(public dialogRef: MdDialogRef<StoreListMapDialogComponent>) { }
 
 	onMarker(evt: any) {
-    let marker = evt.target;
+    const marker = evt.target;
     marker.ng2MapComponent.openInfoWindow('iw', marker, {name: this.name});
   }
 }

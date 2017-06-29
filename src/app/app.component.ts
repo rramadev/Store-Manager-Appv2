@@ -8,7 +8,7 @@ import { MdSnackBar } from '@angular/material';
 })
 export class AppComponent {
 	pageTitle: string = 'Store Manager';
-	snackBarMsg: string = 'Store Manager App v1.0.0 | rramadev.github.io';
+	snackBarMsg: string = 'Store Manager App v2.0.0 | rramadev.github.io';
 
 	constructor(public snackBar: MdSnackBar) { }
 
