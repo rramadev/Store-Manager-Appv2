@@ -1,15 +1,15 @@
-# Store Manager App v2.0.0 - Angular 4.x Demo 
+# Store Manager App v2.0.1 - Angular 5.x Demo 
 
 ## Synopsis
 
-A complete Angular4 demo app using:
+A complete Angular demo app using:
 
 - Html5
 - CSS3
 - SASS
 - Bootstrap
 - TypeScript
-- Angular 4.0
+- Angular 5.0
     * Angular-cli
     * Angular Material 2
     * Angular in-memory-web-api
@@ -18,7 +18,7 @@ A complete Angular4 demo app using:
 - Webpack
 - NPM Build
 
-This is a sample application of the Angular 4.0 framework, using some of the latest web front-end development technologies.
+This is a sample application of the Angular framework, using some of the latest web front-end development technologies.
 
 The app consists on two main different modules, which provide the possibility of managing the Stores and Product lists and details.
 
